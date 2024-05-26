@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Login Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('10-minute-yoga-1600x900.avif');
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            color: white;
+        }
+
+        .login-form {
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 30px;
+    border-radius: 10px;
+    height: 100%; /* Adjusted height */
+}
+
+        .login-form h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: white; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #fff; 
+            text-align: left;
+        }
+
+        .login-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .login-form input:focus {
+            border-color: #007BFF;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .stay-signed-in {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff; 
+            user-select: none;
+        }
+
+        .stay-signed-in input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 45px;
+            background-color: #ccc;
+            border-radius: 25px;
+            transition: 0.4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 17px;
+            width: 17px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        input:checked + .slider {
+            background-color: #ff0000;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        .forgot-password {
+            color: #ff0000;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            background: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #b30000;
+        }
+
+        .copyright {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #fff; 
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h1>Fitness Login Form</h1>
+            <form id="login-form">
+                <label for="name"><i class="fas fa-user"></i> Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="current-weight"><i class="fas fa-weight"></i> Current Weight</label>
+                <input type="number" step="0.1" id="current-weight" name="current-weight" required>
+
+                <label for="target-weight"><i class="fas fa-bullseye"></i> Target Weight</label>
+                <input type="number" step="0.1" id="target-weight" name="target-weight" required>
+
+                <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="username"><i class="fas fa-user-circle"></i> Username</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                <input type="password" id="password" name="password" required>
+                
+                <div class="options">
+                    <label class="stay-signed-in">
+                        <input type="checkbox" id="stay-signed-in" name="stay-signed-in">
+                        <span class="slider"></span>
+                        Stay Signed In
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+        <footer class="copyright">
+            &copy; 2018 Fitness Login Form. All rights reserved | Design by W3layouts
+        </footer>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
+</body>
+</html>
